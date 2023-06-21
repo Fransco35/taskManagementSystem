@@ -25,6 +25,24 @@ const taskSchema = new mongoose.Schema({
 
 const Task = mongoose.model("Task", taskSchema);
 
+app.get("/api/tasks", async (req, res) => {
+  try {
+    const result = await Task.find();
+    res.send(result);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
+app.get("/api/completedTasks", async (req, res) => {
+  try {
+    const selectedTask = await Task.find({ status: "complete" });
+    res.send(selectedTask);
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
 app.post("/api/addTasks", (req, res) => {
   const status = "Incomplete";
 
@@ -77,4 +95,3 @@ const port = process.env.port || 3000;
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
-
