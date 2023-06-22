@@ -6,7 +6,9 @@ const TaskItemTwo = (props) => {
       <div className={styles.taskItem}>
         <h2>{props.title}</h2>
         <p>{props.description}</p>
-        <button className={styles.buttonOutline}>{props.button}</button>
+        <button className={styles.button} onClick={props.onClick}>
+          {props.button}
+        </button>
       </div>
     </Card>
   );

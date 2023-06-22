@@ -9,7 +9,7 @@
   font-size: 16px;
 }
 
-.buttonOutline {
+.button{
   font: inherit;
   font-size: 12px;
   background: white;
@@ -21,12 +21,12 @@
   margin: 0 0.25rem;
 }
 
-.buttonOutline:hover {
+.button:hover {
   background: #000;
   color: #fff;
   box-shadow: none;
 }
 
-.buttonOutline:focus {
+.button:focus {
   outline: none;
 }

@@ -1,0 +1,39 @@
+.taskForm {
+  height: 200px;
+}
+
+.taskInput {
+  border: none;
+  border-bottom: 1px solid #000;
+  display: block;
+  font-size: 20px;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.taskInput:focus {
+  outline: none;
+  border-bottom: 1px solid lightgreen;
+}
+
+.button {
+  font: inherit;
+  font-size: 12px;
+  background: white;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  margin: 0 0.25rem;
+}
+
+.button:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: none;
+}
+
+.button:focus {
+  outline: none;
+}

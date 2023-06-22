@@ -38,7 +38,7 @@ app.get("/api/tasks", async (req, res) => {
 
 app.get("/api/completedTasks", async (req, res) => {
   try {
-    const selectedTask = await Task.find({ status: "complete" });
+    const selectedTask = await Task.find({ status: "Complete" });
     res.status(200).json(selectedTask);
   } catch (error) {
     res.json(error.message);
@@ -73,9 +73,9 @@ app.patch("/api/task/:id", async (req, res) => {
   try {
     await Task.updateOne(
       { _id: new ObjectId(requestedTaskId) },
-      { $set: { status: "complete" } }
+      { $set: { status: "Complete" } }
     );
-    res.send({ message: "Task updated successfully" });
+    res.status(201).json({ message: "Task updated successfully" });
   } catch (error) {
     res.send(error.message);
   }
@@ -87,7 +87,7 @@ app.delete("/api/task/:id", async (req, res) => {
 
   try {
     await Task.deleteOne({ _id: new ObjectId(requestedTaskId) });
-    res.send({ message: "Task deleted successfully" });
+    res.status(201).send({ message: "Task deleted successfully" });
   } catch (error) {
     res.send(error.message);
   }
