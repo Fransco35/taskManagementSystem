@@ -1,0 +1,14 @@
+.taskScreen {
+  margin: 0 2rem;
+}
+
+.taskScreenHeading {
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.taskScreenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

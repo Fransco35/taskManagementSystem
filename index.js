@@ -1,11 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -28,18 +30,18 @@ const Task = mongoose.model("Task", taskSchema);
 app.get("/api/tasks", async (req, res) => {
   try {
     const result = await Task.find();
-    res.send(result);
+    res.status(200).json(result);
   } catch (error) {
-    res.send(error.message);
+    res.json(error.message);
   }
 });
 
 app.get("/api/completedTasks", async (req, res) => {
   try {
     const selectedTask = await Task.find({ status: "complete" });
-    res.send(selectedTask);
+    res.status(200).json(selectedTask);
   } catch (error) {
-    res.send(error.message);
+    res.json(error.message);
   }
 });
 
@@ -91,7 +93,7 @@ app.delete("/api/task/:id", async (req, res) => {
   }
 });
 
-const port = process.env.port || 3000;
+const port = process.env.port || 3001;
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
 });

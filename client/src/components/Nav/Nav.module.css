@@ -1,0 +1,278 @@
+.nav {
+  width: 100%;
+  height: 65px;
+  position: relative;
+  line-height: 65px;
+  z-index: 12;
+  display: flex;
+  background-color: #000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.navLogo {
+  margin-right: auto;
+  padding-left: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+}
+
+.navLogo a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and(max-width: 375px) {
+  .nav {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and(max-width: 375px) {
+  .navLogo {
+    font-size: 10px;
+  }
+}
+
+.sublinks {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 65px;
+  float: left;
+  margin-left: 80px;
+}
+
+@media screen and (max-width: 1000px) {
+  .sublinks {
+    width: 40vw;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .sublinksTwo {
+    height: auto;
+    position: absolute;
+    top: 67px;
+    right: 0;
+    width: 70vw;
+    transition: all 0.5s;
+  }
+}
+
+.sublinksUl {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .sublinksUl {
+    flex-direction: column;
+    justify-content: normal;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    background-position: center top;
+  }
+}
+
+.sublinksLi {
+  width: auto;
+  height: 65px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-right: 25px;
+}
+
+.sublinksLi:hover {
+  transform: translateY(-5px);
+}
+
+.sublinksLi a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .sublinksLi {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .sublinksLi:hover {
+    transform: translateY(0);
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.span {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  margin-left: 10px;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  display: none;
+}
+
+@media screen and(max-width: 1000px) {
+  .span {
+    display: block;
+  }
+}
+
+@media screen and(max-width: 360px) {
+  .span {
+    width: 25px;
+    margin-left: 5px;
+  }
+}
+
+.navTrigger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  margin-left: 10px;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .navTrigger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navTrigger {
+    width: 25px;
+    margin-left: 5px;
+  }
+}
+
+.navTrigger i {
+  background-color: #fff;
+  border-radius: 2px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+}
+@media screen and (max-width: 375px) {
+  .navTrigger i {
+    height: 3px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navTrigger i {
+    height: 2px;
+  }
+}
+
+.navTrigger i:nth-child(1) {
+  animation: outT 0.8s backwards;
+  animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+  margin: 5px 0;
+  animation: outM 0.8s backwards;
+  animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+  animation: outBtm 0.8s backwards;
+  animation-direction: reverse;
+}
+
+.navTrigger:active i:nth-child(1) {
+  animation: inT 0.8s forwards;
+}
+
+.navTrigger:active i:nth-child(2) {
+  animation: inM 0.8s forwards;
+}
+
+.navTrigger:active i:nth-child(3) {
+  animation: inBtm 0.8s forwards;
+}
+
+@keyframes inM {
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes outM {
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes inT {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(9px) rotate(0);
+  }
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes outT {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(9px) rotate(0);
+  }
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes inBtm {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0);
+  }
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+@keyframes outBtm {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0);
+  }
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}

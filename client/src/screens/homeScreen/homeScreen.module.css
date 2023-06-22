@@ -1,0 +1,13 @@
+.homeScreen {
+  margin: 0 2rem;
+}
+
+.homeScreenHeading {
+  margin: 0 auto;
+}
+
+.homeScreenContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
